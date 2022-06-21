@@ -40,7 +40,10 @@ const httpLink = new HttpLink({
 });
 
 const wsLink = new GraphQLWsLink(createClient({
-    url: 'ws://localhost:5000/graphql/',
+    url: "ws://localhost:5000/graphql/",
+    connectionParams: {
+        authToken: "xxx",
+    },
 }));
 
 const splitLink = split(
